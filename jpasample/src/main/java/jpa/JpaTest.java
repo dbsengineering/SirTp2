@@ -86,6 +86,26 @@ public class JpaTest {
 			 
 			 residence5.addChauffage(new Chauffage());
 			 residence5.addChauffage(new Chauffage());
+			 
+			 //Ajout Equipement électronique
+			 residence1.addEquipementElec(new EquipementElec());
+			 residence1.addEquipementElec(new EquipementElec());
+			 residence1.addEquipementElec(new EquipementElec());
+			 residence1.addEquipementElec(new EquipementElec());
+			 residence1.addEquipementElec(new EquipementElec());
+			 residence1.addEquipementElec(new EquipementElec());
+			 
+			 
+			 residence2.addEquipementElec(new EquipementElec());
+			 residence2.addEquipementElec(new EquipementElec());
+			 residence2.addEquipementElec(new EquipementElec());
+			 
+			 residence3.addEquipementElec(new EquipementElec());
+			 residence3.addEquipementElec(new EquipementElec());
+			 
+			 residence10.addEquipementElec(new EquipementElec());
+			 residence10.addEquipementElec(new EquipementElec());
+			 residence10.addEquipementElec(new EquipementElec());
 
 			// Ajout des chauffages, aux maisons
 			/*

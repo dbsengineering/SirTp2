@@ -16,16 +16,18 @@ public class Residence {
 	
 	// --- Déclaration des propriétées ---
 	private Long id;
-	private float taille;
+	private double taille;
 	private int nbPieces;
 	private Personne personne;
 	private Collection<Chauffage> chauffages;
+	private Collection<EquipementElec> equipementElecs;
 	
 	/**
 	 * Constructeur 1.
 	 */
 	public Residence() {
 		this.chauffages = new HashSet<Chauffage>();
+		this.equipementElecs = new HashSet<EquipementElec>();
 	}
 	
 	/**
@@ -38,6 +40,7 @@ public class Residence {
 		this.taille = taille;
 		this.nbPieces = nbPieces;
 		this.chauffages = new HashSet<Chauffage>();
+		this.equipementElecs = new HashSet<EquipementElec>();
 	}
 	
 	/**
@@ -51,6 +54,23 @@ public class Residence {
 		return this.id;
 	}
 	
+	
+	
+	/**
+	 * @return the equipementElecs
+	 */
+	@OneToMany(targetEntity = EquipementElec.class, cascade = { CascadeType.ALL }, orphanRemoval = true)
+	public Collection<EquipementElec> getEquipementElecs() {
+		return equipementElecs;
+	}
+
+	/**
+	 * @param equipementElecs the equipementElecs to set
+	 */
+	public void setEquipementElecs(Collection<EquipementElec> equipementElecs) {
+		this.equipementElecs = equipementElecs;
+	}
+
 	/**
 	 * Fonction qui retourne la personne qui possède la résidence.
 	 * @return personne . Personne
@@ -71,6 +91,10 @@ public class Residence {
 	
 	public void addChauffage(Chauffage chauffage) {
 		this.chauffages.add(chauffage);
+	}
+	
+	public void addEquipementElec(EquipementElec equipementElec) {
+		this.equipementElecs.add(equipementElec);
 	}
 	
 	/**
@@ -94,14 +118,14 @@ public class Residence {
 	 * @return the taille
 	 */
 	@Column(name="taille")
-	public float getTaille() {
+	public double getTaille() {
 		return taille;
 	}
 
 	/**
 	 * @param taille the taille to set
 	 */
-	public void setTaille(float taille) {
+	public void setTaille(double taille) {
 		this.taille = taille;
 	}
 
