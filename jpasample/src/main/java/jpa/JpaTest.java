@@ -1,13 +1,11 @@
 package jpa;
 
-import java.util.Collection;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
+
 
 public class JpaTest {
 	private EntityManager manager;
@@ -100,9 +98,16 @@ public class JpaTest {
             Person p2 = new Person("Durand", "Henry");
             Person p3 = new Person("Captain","Nemo");
             Person p4 = new Person("Dupont","Alain");
+            Person p5 = new Person("Dupont","Alain");
+            Person p6 = new Person("Dupont","Alain");
+            Person p7 = new Person("Dupont","Alain");
             
             p1.addFriend(p2);
             p1.addFriend(p4);
+            
+            p2.addFriend(p1);
+            p2.addFriend(p7);
+            p2.addFriend(p6);
             
             /*p1.addHome(home1);
             p2.addHome(home2);
@@ -114,6 +119,9 @@ public class JpaTest {
             manager.persist(p2);
             manager.persist(p3);
             manager.persist(p4);
+            manager.persist(p5);
+            manager.persist(p6);
+            manager.persist(p7);
         }
     }
     
