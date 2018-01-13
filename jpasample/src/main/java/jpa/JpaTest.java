@@ -49,6 +49,10 @@ public class JpaTest {
 		int numPersonne = manager.createQuery("Select a From Personne a", Personne.class).getResultList().size();
 		
 		if (numPersonne == 0) {
+			
+			
+			
+			
 			// Création des résidences
 			 Residence residence1 = new Residence(2000, 10);
 			 Residence residence2 = new Residence(1000, 5);
@@ -61,7 +65,27 @@ public class JpaTest {
 			 Residence residence9 = new Residence(3000, 9);
 			 Residence residence10 = new Residence(3000, 9);
 			 
-
+			//Création des chauffages
+			 residence1.addChauffage(new Chauffage());
+			 residence1.addChauffage(new Chauffage());
+			 residence1.addChauffage(new Chauffage());
+			 residence1.addChauffage(new Chauffage());
+			 
+			 residence2.addChauffage(new Chauffage());
+			 residence2.addChauffage(new Chauffage());
+			 residence2.addChauffage(new Chauffage());
+			 residence2.addChauffage(new Chauffage());
+			 residence2.addChauffage(new Chauffage());
+			 
+			 residence3.addChauffage(new Chauffage());
+			 residence3.addChauffage(new Chauffage());
+			 
+			 residence4.addChauffage(new Chauffage());
+			 residence4.addChauffage(new Chauffage());
+			 residence4.addChauffage(new Chauffage());
+			 
+			 residence5.addChauffage(new Chauffage());
+			 residence5.addChauffage(new Chauffage());
 
 			// Ajout des chauffages, aux maisons
 			/*
