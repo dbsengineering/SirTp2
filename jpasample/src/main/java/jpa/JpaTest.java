@@ -50,9 +50,6 @@ public class JpaTest {
 		
 		if (numPersonne == 0) {
 			
-			
-			
-			
 			// Création des résidences
 			 Residence residence1 = new Residence(2000, 10);
 			 Residence residence2 = new Residence(1000, 5);
@@ -106,41 +103,6 @@ public class JpaTest {
 			 residence10.addEquipementElec(new EquipementElec());
 			 residence10.addEquipementElec(new EquipementElec());
 			 residence10.addEquipementElec(new EquipementElec());
-
-			// Ajout des chauffages, aux maisons
-			/*
-			 * home1.addHeater(new Heater()); home1.addHeater(new Heater());
-			 * home1.addHeater(new Heater()); home1.addHeater(new Heater());
-			 * 
-			 * home2.addHeater(new Heater()); home2.addHeater(new Heater());
-			 * home2.addHeater(new Heater());
-			 * 
-			 * home3.addHeater(new Heater()); home3.addHeater(new Heater());
-			 * home3.addHeater(new Heater());
-			 * 
-			 * home4.addHeater(new Heater()); home4.addHeater(new Heater());
-			 * home4.addHeater(new Heater());
-			 * 
-			 * //Ajout des équipements électronique home1.addDevice(new
-			 * ElectronicDevice(2000)); home1.addDevice(new ElectronicDevice(1000));
-			 * home1.addDevice(new ElectronicDevice(2000)); home1.addDevice(new
-			 * ElectronicDevice(1000));
-			 * 
-			 * 
-			 * home2.addDevice(new ElectronicDevice(2000)); home2.addDevice(new
-			 * ElectronicDevice(2000)); home2.addDevice(new ElectronicDevice(1000));
-			 * 
-			 * home3.addDevice(new ElectronicDevice(1000)); home3.addDevice(new
-			 * ElectronicDevice(1000)); home3.addDevice(new ElectronicDevice(2000));
-			 * 
-			 * home4.addDevice(new ElectronicDevice(1000));
-			 */
-
-			// Ajout des maisons dans la base de données
-			// manager.persist(home1);
-			// manager.persist(home2);
-			// manager.persist(home3);
-			// manager.persist(home4);
 
 			Personne p1 = new Personne("Jaka", "Bada", "jaka.bada@breizh.bzh");
 			Personne p2 = new Personne("Durand", "Henry", "durand.henry@breizh.bzh");

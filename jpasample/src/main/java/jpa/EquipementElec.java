@@ -1,15 +1,14 @@
 package jpa;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+//@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @Entity
-public class EquipementElec {
+public class EquipementElec extends Intelligent{
 	
-	private Long id;
+	//private Long id;
 	private double consommation;
 	private Residence residence;
 	
@@ -21,19 +20,19 @@ public class EquipementElec {
 	/**
 	 * @return the id
 	 */
-	@Id
+	/*@Id
 	@GeneratedValue
-	@Column(name="id")
+	@Column(name="id_equipement")
 	public Long getId() {
 		return id;
-	}
+	}*/
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(Long id) {
+	/*public void setId(Long id) {
 		this.id = id;
-	}
+	}*/
 
 	/**
 	 * @return the consommation
@@ -63,7 +62,4 @@ public class EquipementElec {
 	public void setResidence(Residence residence) {
 		this.residence = residence;
 	}
-	
-	
-	
 }
