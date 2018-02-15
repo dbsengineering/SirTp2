@@ -12,9 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 to have data base sql and Maven installed. If not show the dependency in file
 
-```
-Give examples
-```
+
 
 ### Installing
 
@@ -24,37 +22,27 @@ Download and installing jdk.
 Configurer le JDK dans Eclipse : Windows -> Preferences -> Java -> Installed JREs -> Search button. Find jdk
 in C:\Programs\Java
 
-```
-Give the example
-```
+- Create database in your favorite MySql server. (I used Wamp). My database name is "tp2jpa" . You find this, in persistence.xml file
 
-And repeat
 
-```
-until finished
-```
+## Running
 
-End with an example of getting some data out of the system or using it for a little demo
+- Launch your database MySql
+- Clean, build and install dependencies pom.xml. Right click on project folder -> Run As -> 
+Maven (clean, build, install)
 
-## Running the tests
-
-Explain how to run the automated tests for this system
+- Activate server with files script (run-hsqldb-server.sh)
+- Run Main class
 
 ### Break down into end to end tests
 
 Explain what these tests test and why
 
-```
-Give an example
-```
 
 ### And coding style tests
 
 Explain what these tests test and why
 
-```
-Give an example
-```
 
 ## Deployment
 
