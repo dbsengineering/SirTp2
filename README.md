@@ -18,9 +18,11 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+Recover this source code and import it into Eclipse : File -> import -> maven -> existing maven project.
 
-Say what the step will be
+Download and installing jdk.
+Configurer le JDK dans Eclipse : Windows -> Preferences -> Java -> Installed JREs -> Search button. Find jdk
+in C:\Programs\Java
 
 ```
 Give the example
