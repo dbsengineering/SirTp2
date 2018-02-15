@@ -23,6 +23,8 @@ public class JpaTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		long start = System.currentTimeMillis();
 
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("mysql");
 
@@ -39,7 +41,11 @@ public class JpaTest {
 		test.listPersonnes();
 
 		manager.close();
+		long end = System.currentTimeMillis();
+		long duree = end - start;
+		
 		System.out.println(".. ok");
+		System.err.println("temps d'exec = " + duree + " ms");
 	}
 
 	/**
@@ -144,7 +150,7 @@ public class JpaTest {
 	}
 
 	/**
-	 * 
+	 * Procédure qui affiche les personnes
 	 */
 	private void listPersonnes() {
 		List<Personne> resultList = manager.createQuery("Select a From Personne a", Personne.class).getResultList();
