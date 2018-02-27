@@ -17,6 +17,7 @@ public class JpaTest {
 
   // --- Déclaration des propriétées ---
   private EntityManager manager;
+  private static long start;
 
   /**
    * Constructeur de la classe.
@@ -36,7 +37,7 @@ public class JpaTest {
    *          : Arguments
    */
   public static void main(String[] args) {
-    long start = System.currentTimeMillis();
+    start = System.currentTimeMillis();
     EntityManagerFactory factory = Persistence.createEntityManagerFactory("mysql");
     EntityManager manager = factory.createEntityManager();
     JpaTest test = new JpaTest(manager);
@@ -66,59 +67,46 @@ public class JpaTest {
 
     if (numPersonne == 0) {
 
-      // Création des résidences
+      // Création des résidences, chauffages, ajout équipement électronique
+      //Model Google checkstyle
       Residence residence1 = new Residence(2000, 10);
+      residence1.addChauffage(new Chauffage());
+      residence1.addChauffage(new Chauffage());
+      residence1.addChauffage(new Chauffage());
+      residence1.addChauffage(new Chauffage());
+      residence1.addEquipementElec(new EquipementElec());
+      residence1.addEquipementElec(new EquipementElec());
+      residence1.addEquipementElec(new EquipementElec());
+      residence1.addEquipementElec(new EquipementElec());
+      residence1.addEquipementElec(new EquipementElec());
+      residence1.addEquipementElec(new EquipementElec());
       Residence residence2 = new Residence(1000, 5);
+      residence2.addChauffage(new Chauffage());
+      residence2.addChauffage(new Chauffage());
+      residence2.addChauffage(new Chauffage());
+      residence2.addChauffage(new Chauffage());
+      residence2.addChauffage(new Chauffage());
+      residence2.addEquipementElec(new EquipementElec());
+      residence2.addEquipementElec(new EquipementElec());
+      residence2.addEquipementElec(new EquipementElec());
       Residence residence3 = new Residence(1500, 8);
+      residence3.addChauffage(new Chauffage());
+      residence3.addChauffage(new Chauffage());
+      residence3.addEquipementElec(new EquipementElec());
+      residence3.addEquipementElec(new EquipementElec());
       Residence residence4 = new Residence(3000, 9);
+      residence4.addChauffage(new Chauffage());
+      residence4.addChauffage(new Chauffage());
+      residence4.addChauffage(new Chauffage());
       Residence residence5 = new Residence(3000, 9);
-      Residence residence6 = new Residence(3000, 9);
-      Residence residence7 = new Residence(3000, 9);
-      Residence residence8 = new Residence(3000, 9);
-      Residence residence9 = new Residence(3000, 9);
+      residence5.addChauffage(new Chauffage());
+      residence5.addChauffage(new Chauffage());
       Residence residence10 = new Residence(3000, 9);
-
-      // Création des chauffages
-      residence1.addChauffage(new Chauffage());
-      residence1.addChauffage(new Chauffage());
-      residence1.addChauffage(new Chauffage());
-      residence1.addChauffage(new Chauffage());
-
-      residence2.addChauffage(new Chauffage());
-      residence2.addChauffage(new Chauffage());
-      residence2.addChauffage(new Chauffage());
-      residence2.addChauffage(new Chauffage());
-      residence2.addChauffage(new Chauffage());
-
-      residence3.addChauffage(new Chauffage());
-      residence3.addChauffage(new Chauffage());
-
-      residence4.addChauffage(new Chauffage());
-      residence4.addChauffage(new Chauffage());
-      residence4.addChauffage(new Chauffage());
-
-      residence5.addChauffage(new Chauffage());
-      residence5.addChauffage(new Chauffage());
-
-      // Ajout Equipement électronique
-      residence1.addEquipementElec(new EquipementElec());
-      residence1.addEquipementElec(new EquipementElec());
-      residence1.addEquipementElec(new EquipementElec());
-      residence1.addEquipementElec(new EquipementElec());
-      residence1.addEquipementElec(new EquipementElec());
-      residence1.addEquipementElec(new EquipementElec());
-
-      residence2.addEquipementElec(new EquipementElec());
-      residence2.addEquipementElec(new EquipementElec());
-      residence2.addEquipementElec(new EquipementElec());
-
-      residence3.addEquipementElec(new EquipementElec());
-      residence3.addEquipementElec(new EquipementElec());
-
       residence10.addEquipementElec(new EquipementElec());
       residence10.addEquipementElec(new EquipementElec());
       residence10.addEquipementElec(new EquipementElec());
 
+      //Création de personnes, d'amis et affectation aux résidences
       Personne p1 = new Personne("Jaka", "Bada", "jaka.bada@breizh.bzh");
       Personne p2 = new Personne("Durand", "Henry", "durand.henry@breizh.bzh");
       Personne p3 = new Personne("Captain", "Nemo", "captain.nemo@breiah.bzh");
@@ -126,14 +114,20 @@ public class JpaTest {
       Personne p5 = new Personne("Macron", "Emmanuel", "macron.emmanuel@gmail.fr");
       Personne p6 = new Personne("Dupont", "Alain", "dupont.alain@gmail.com");
       Personne p7 = new Personne("Hollande", "François", "hollande.francois@sfr.fr");
-
-      // Ajout amis
+      
       p1.addAmi(p2);
       p1.addAmi(p4);
-      p2.addAmi(p7);
-      p2.addAmi(p6);
       p4.addAmi(p5);
+      p2.addAmi(p6);
+      p2.addAmi(p7);
+      
 
+      //Ajout de résidence. Model Google CheckStyle
+      Residence residence6 = new Residence(3000, 9);
+      Residence residence7 = new Residence(3000, 9);
+      Residence residence8 = new Residence(3000, 9);
+      Residence residence9 = new Residence(3000, 9);
+      
       // Ajout des résidences aux personnes
       p1.addResidence(residence1);
       p1.addResidence(residence2);
@@ -157,7 +151,9 @@ public class JpaTest {
   }
 
   /**
-   * Procédure qui affiche les personnes
+   * 
+   * Procédure qui affiche les personnes.
+   * 
    */
   private void listPersonnes() {
     List<Personne> resultList = manager.createQuery("Select a From Personne a", Personne.class)
