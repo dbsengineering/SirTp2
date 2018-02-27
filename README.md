@@ -27,8 +27,8 @@ in C:\Programs\Java
 
 ## Running
 
-- Launch your database MySql
-- Clean, build and install dependencies pom.xml. Right click on project folder -> Run As -> 
+- Launch your database MySql or launch server with bach script sh. (here is MySql)
+- Clean, install and build dependencies pom.xml. Right click on project folder -> Run As -> 
 Maven (clean, build, install)
 
 - Activate server with files script (run-hsqldb-server.sh)
