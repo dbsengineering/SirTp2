@@ -1,65 +1,65 @@
 package jpa;
 
-
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 //@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+/**
+ * Classe EquipementElec qui hérite de Intelligent.
+ * 
+ * @author Jeremy Cavron
+ * @version 1.0
+ *
+ */
 @Entity
-public class EquipementElec extends Intelligent{
-	
-	//private Long id;
-	private double consommation;
-	private Residence residence;
-	
-	/**
-	 * 
-	 */
-	public EquipementElec() {}
+public class EquipementElec extends Intelligent {
 
-	/**
-	 * @return the id
-	 */
-	/*@Id
-	@GeneratedValue
-	@Column(name="id_equipement")
-	public Long getId() {
-		return id;
-	}*/
+  // --- Déclaration des propriétées ---
+  private double consommation;
+  private Residence residence;
 
-	/**
-	 * @param id the id to set
-	 */
-	/*public void setId(Long id) {
-		this.id = id;
-	}*/
+  /**
+   * Constructeur de la classe.
+   */
+  public EquipementElec() {
+  }
 
-	/**
-	 * @return the consommation
-	 */
-	public double getConsommation() {
-		return consommation;
-	}
+  /**
+   * Fonction qui retourne la consommation de l'équipement
+   * 
+   * @return consommation : La consommation de l'équipement.
+   */
+  public double getConsommation() {
+    return this.consommation;
+  }
 
-	/**
-	 * @param consommation the consommation to set
-	 */
-	public void setConsommation(double consommation) {
-		this.consommation = consommation;
-	}
+  /**
+   * Procédure qui modifie la consommation de l'équipement.
+   * 
+   * @param consommation
+   *          : consommation de l'équipement.
+   */
+  public void setConsommation(double consommation) {
+    this.consommation = consommation;
+  }
 
-	/**
-	 * @return the residence
-	 */
-	@ManyToOne()
-	public Residence getResidence() {
-		return residence;
-	}
+  /**
+   * Fonction qui retourne la résidence où se trouve l'équipement.
+   * 
+   * @return residence : Résidence où se trouve l'équipement.
+   */
+  @ManyToOne()
+  public Residence getResidence() {
+    return this.residence;
+  }
 
-	/**
-	 * @param residence the residence to set
-	 */
-	public void setResidence(Residence residence) {
-		this.residence = residence;
-	}
+  /**
+   * Procédure qui permet de modifier la résidence où se trouve l'équipement.
+   * 
+   * @param residence
+   *          : résidence où se trouve l'équipement.
+   */
+  public void setResidence(Residence residence) {
+    this.residence = residence;
+  }
 }

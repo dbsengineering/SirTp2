@@ -1,2 +1,7 @@
 eclipse.preferences.version=1
-encoding/<project>=UTF-8
+encoding//src/main/java/jpa/Chauffage.java=UTF-8
+encoding//src/main/java/jpa/EquipementElec.java=UTF-8
+encoding//src/main/java/jpa/Intelligent.java=UTF-8
+encoding//src/main/java/jpa/JpaTest.java=UTF-8
+encoding//src/main/java/jpa/Personne.java=UTF-8
+encoding//src/main/java/jpa/Residence.java=UTF-8
